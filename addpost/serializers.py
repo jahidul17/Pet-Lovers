@@ -12,6 +12,7 @@ class PostSerializers(serializers.ModelSerializer):
 
 
 class ReviewerSerializers(serializers.ModelSerializer):
+    reviewer = serializers.StringRelatedField( many=False)
     class Meta:
         model=models.Reviewer
         fields='__all__'

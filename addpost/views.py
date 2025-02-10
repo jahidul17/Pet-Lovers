@@ -14,7 +14,6 @@ class PostViewSet(viewsets.ModelViewSet):
 
 
 class ReviewerViewSet(viewsets.ModelViewSet):    
-    # permission_classes = [IsAuthenticated]
     permission_classes = [IsAuthenticatedOrReadOnly ]
     
     queryset=models.Reviewer.objects.all()
