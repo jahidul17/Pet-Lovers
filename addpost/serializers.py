@@ -11,3 +11,9 @@ class PostSerializers(serializers.ModelSerializer):
         fields='__all__'
 
 
+class ReviewerSerializers(serializers.ModelSerializer):
+    class Meta:
+        model=models.Reviewer
+        fields='__all__'
+    
+    

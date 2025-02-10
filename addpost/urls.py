@@ -5,7 +5,8 @@ from .import views
 
 router=DefaultRouter()
 
-router.register('',views.PostViewSet)
+router.register('list',views.PostViewSet)
+router.register('review',views.ReviewerViewSet)
 
 urlpatterns = [
     path('',include(router.urls)),
