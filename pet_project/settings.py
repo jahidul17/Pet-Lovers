@@ -45,6 +45,7 @@ ALLOWED_HOSTS = ["127.0.0.1",".vercel.app"]
 # Application definition
 
 INSTALLED_APPS = [
+    "corsheaders",    
     "whitenoise.runserver_nostatic",
     #pre
     'django.contrib.admin',
@@ -63,6 +64,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
+    
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -153,6 +156,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR/'staticfiles'
+
+CORS_ALLOW_ALL_ORIGINS=True
 
 # Base url to serve media files
 MEDIA_URL = '/media/'
