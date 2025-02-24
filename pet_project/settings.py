@@ -25,6 +25,12 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# cloudinary import
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
 # Your secret key
 SECRET_KEY = os.getenv("SECRET_KEY")
 
@@ -56,6 +62,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'cloudinary',
     'accounts',
     'addpost',
     'category',
@@ -178,4 +185,14 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = os.getenv("EMAIL")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
+
+
+# cloudinary config
+
+cloudinary.config(
+    cloud_name="dnrlzpgof",
+    api_key="468857526191345",
+    api_secret="lW2NFwoerykr6Psvj-xq1r5fENk",
+)
+
 
