@@ -28,7 +28,7 @@ class Post(models.Model):
     origin=models.ForeignKey(Origin,on_delete=models.CASCADE)
     colour=models.CharField(choices=COLOUR_CHOICES, max_length=20,blank=True,null=True)
     title=models.CharField(max_length=100,blank=True)
-    # image=CloudinaryField("addpost/images",blank=True,null=True)
+    image=CloudinaryField("addpost/images",blank=True,null=True)
     price=models.IntegerField()
     gender=models.CharField(choices=GENDER_CHOICES,max_length=20,null=True)
     contact=models.CharField(max_length=12)
