@@ -7,7 +7,7 @@ from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnl
 # Create your views here.
 class PostViewSet(viewsets.ModelViewSet):
     # permission_classes = [IsAuthenticated]
-    # permission_classes = [IsAuthenticatedOrReadOnly ]
+    permission_classes = [IsAuthenticatedOrReadOnly ]
     
     queryset=models.Post.objects.all()
     serializer_class=serializers.PostSerializers
