@@ -24,6 +24,7 @@ GENDER_CHOICES=(
 )
 
 class Post(models.Model):
+    author=models.ForeignKey(User,on_delete=models.CASCADE,blank=True,null=True)
     category=models.ForeignKey(Categories,on_delete=models.CASCADE)
     origin=models.ForeignKey(Origin,on_delete=models.CASCADE)
     colour=models.CharField(choices=COLOUR_CHOICES, max_length=20,blank=True,null=True)
@@ -34,6 +35,7 @@ class Post(models.Model):
     contact=models.CharField(max_length=12)
     description=models.TextField()
     age=models.CharField(max_length=20)
+    created_at=models.DateTimeField(auto_now_add=True,blank=True,null=True)
     
     # def __str__(self):
     #     return f"{self.category} {self.image}"
